@@ -1,36 +1,47 @@
-# Gestion des Tâches
+# Task Management
 
-Bienvenue dans le projet **Gestion des Tâches**. Cette application MERN (MongoDB, Express, React, Node.js) permet aux utilisateurs de gérer leurs tâches avec une interface intuitive et des fonctionnalités de **Drag and Drop**.
+Welcome to the **Task Management** project. This MERN (MongoDB, Express, React, Node.js) application allows users to manage their tasks with an intuitive interface and **Drag and Drop** functionality.
 
-## Table des Matières
+## Table of Contents
 
-- [Fonctionnalités](#fonctionnalités)
-- [Technologies Utilisées](#technologies-utilisées)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Utilisation](#utilisation)
-- [Structure du Projet](#structure-du-projet)
-
----
-
-## Fonctionnalités
-
-- **Authentification Utilisateur** : Connexion sécurisée avec JWT.
-- **Ajouter des Tâches** : Créer une nouvelle tâche avec titre et description.
-- **Mettre à Jour une Tâche** : Modifier le titre et la description.
-- **Supprimer une Tâche** : Supprimer une tâche existante.
-- **Changer le Statut des Tâches** : Déplacer les tâches entre **"À Faire"** et **"Terminées"** avec Drag and Drop.
-- **Interface Moderne** : Utilisation de **Material-UI** pour un design réactif.
-- **Persistance des Données** : Sauvegarde des tâches dans une base MongoDB.
+- [Features](#Features)
+- [Screenshots](#Screenshots)
+- [Technologies Used](#Technologies-Used)
+- [Installation](#Installation)
+- [Configuration](#Configuration)
+- [Usage](#Usage)
+- [Project Structure](#Project-Structure)
 
 ---
 
-## Technologies Utilisées
+## Features
+
+- **User Authentication** : Secure login using JWT.
+- **Add Tasks:** : Create a new task with a title and description.
+- **Update Tasks:** : Edit the title and description of existing tasks.
+- **Delete Tasks** : Remove an existing task.
+- **Change Task Status** : Move tasks between **To Do** and **Done** using drag-and-drop functionality.
+
+---
+
+## Screenshots
+
+### Tableau de Bord
+
+A dynamic overview of total, completed, and pending tasks.
+![Dashboard](public/screenshots/dashbord.png)
+
+### Gestion des Tâches
+
+![Tasks](public/screenshots/taskManager.png)
+Intuitive drag-and-drop functionality to move tasks between the "To Do" and "Done" columns.
+![Tasks](public/screenshots/draganddrop.png)
+
+## Technologies-Used
 
 - **Backend** : Node.js, Express.js, MongoDB, Mongoose
-- **Frontend** : React.js, React-Beautiful-DND, Material-UI, Axios
+- **Frontend** : React.js, ReactSortable, Material-UI, Axios
 - **Authentification** : JSON Web Token (JWT)
-- **Outils** : npm, Postman, Visual Studio Code
 
 ---
 
@@ -38,13 +49,13 @@ Bienvenue dans le projet **Gestion des Tâches**. Cette application MERN (MongoD
 
 ### Prérequis
 
-- **Node.js** (version 14.x ou supérieure)
-- **MongoDB** (installé localement ou via un service cloud comme Atlas)
+- **Node.js** (version 14.x or higher)
+- **MongoDB** (installed locally or via a cloud service like Atlas)
 - **npm** ou **yarn**
 
-### Étapes d'Installation
+### Installation Steps
 
-1. **Cloner le projet** :
+1. **Clone the project:** :
 
    ```bash
    git clone https://github.com/MariemSoualhia/To-Do-List-mern-project.git
@@ -52,29 +63,14 @@ Bienvenue dans le projet **Gestion des Tâches**. Cette application MERN (MongoD
 
    ```
 
-2. Installez les dépendances pour le backend :
+2. Install backend dependencies::
 
    ```
    cd backend
    npm install
    ```
 
-3. Installez les dépendances pour le frontend :
-
-   ```
-   cd ../frontend
-   npm install
-
-   ```
-
-4. Installez les dépendances pour le backend :
-
-   ```
-   cd backend
-   npm install
-   ```
-
-5. Installez les dépendances pour le frontend :
+3. Install frontend dependencies:
 
    ```
    cd ../frontend
@@ -84,7 +80,7 @@ Bienvenue dans le projet **Gestion des Tâches**. Cette application MERN (MongoD
 
 ### Configuration
 
-Créez un fichier .env dans le dossier backend et ajoutez les configurations nécessaires :
+Create a .env file in the backend directory and add the required configurations: :
 
 ```
 # .env file
@@ -93,22 +89,22 @@ MONGO_URI=mongodb://localhost:27017/gestion-taches
 JWT_SECRET=votre_secret_jwt
 ```
 
-### Utilisation
+### Usage
 
-1. Démarrez le backend :
+1. Start the backend :
    ```
    cd backend
    npm start
    ```
-2. Démarrez le frontend :
+2. Start the frontend :
    ```
    cd ../frontend
    npm start
    ```
 
-### Structure du Projet
+### Project-Structure
 
-Voici la structure du projet :
+The project structure is as follows: :
 
 ```
 gestion-taches-mern/

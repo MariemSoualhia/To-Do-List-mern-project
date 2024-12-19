@@ -15,6 +15,8 @@ import {
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ListIcon from "@mui/icons-material/List";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LogoutIcon from "@mui/icons-material/Logout";
+import "./sidebar.css";
 
 const drawerWidth = 240;
 
@@ -42,44 +44,52 @@ function Sidebar() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            Mon Application
+          <Typography variant="h6" className="sidebar-title">
+            My Application
           </Typography>
         </Toolbar>
-        <Divider />
+        <Divider className="sidebar-divider" />
         <List>
           <ListItem button component={Link} to="/app/dashboard">
             <ListItemIcon>
-              <DashboardIcon style={{ color: "white" }} />
+              <DashboardIcon className="sidebar-icon" />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
           <ListItem button component={Link} to="/app/tasks">
             <ListItemIcon>
-              <ListIcon style={{ color: "white" }} />
+              <ListIcon className="sidebar-icon" />
             </ListItemIcon>
-            <ListItemText primary="Liste des Tâches" />
+            <ListItemText primary="Task List" />
           </ListItem>
-
           <ListItem button component={Link} to="/app/tasksList">
             <ListItemIcon>
-              <ListIcon style={{ color: "white" }} />
+              <ListIcon className="sidebar-icon" />
             </ListItemIcon>
-            <ListItemText primary="Liste des Tâches drag and drop" />
+            <ListItemText primary="Drag and Drop Tasks" />
           </ListItem>
           <ListItem button component={Link} to="/app/profile">
             <ListItemIcon>
-              <AccountCircleIcon style={{ color: "white" }} />
+              <AccountCircleIcon className="sidebar-icon" />
             </ListItemIcon>
-            <ListItemText primary="Profil" />
+            <ListItemText primary="Profile" />
           </ListItem>
         </List>
-        <Divider />
+        <Divider className="sidebar-divider" />
         <Box
-          sx={{ textAlign: "center", marginTop: "auto", paddingBottom: "1rem" }}
+          sx={{
+            textAlign: "center",
+            marginTop: "auto",
+            paddingBottom: "1rem",
+          }}
         >
-          <Button variant="contained" color="secondary" onClick={handleLogout}>
-            Déconnexion
+          <Button
+            variant="contained"
+            startIcon={<LogoutIcon />}
+            className="logout-button"
+            onClick={handleLogout}
+          >
+            Logout
           </Button>
         </Box>
       </Drawer>

@@ -66,6 +66,27 @@ const updateTaskStatus = async (req, res) => {
     res.status(404).json({ message: "Tâche non trouvée ou non autorisée" });
   }
 };
+const getTaskStats = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const totalTasks = await Task.countDocuments({ user: userId });
+    const completedTasks = await Task.countDocuments({
+      user: userId,
+      status: "done",
+    });
+    const pendingTasks = totalTasks - completedTasks;
+
+    res.json({
+      totalTasks,
+      completedTasks,
+      pendingTasks,
+    });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Erreur lors de la récupération des statistiques." });
+  }
+};
 
 module.exports = {
   getTasks,
@@ -74,4 +95,5 @@ module.exports = {
   deleteTask,
   changeStatus,
   updateTaskStatus,
+  getTaskStats,
 };

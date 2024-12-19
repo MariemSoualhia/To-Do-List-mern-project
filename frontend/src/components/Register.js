@@ -20,61 +20,63 @@ function Register() {
       await registerUser(formData);
       navigate("/");
     } catch (err) {
-      console.error("Erreur d'inscription", err);
+      console.error("Registration error", err);
     }
   };
 
   return (
-    <Container maxWidth="sm">
-      <Paper elevation={10} sx={{ padding: "2rem", borderRadius: "10px" }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Inscription
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            label="Nom"
-            name="name"
-            margin="normal"
-            onChange={handleChange}
-            required
-          />
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            margin="normal"
-            onChange={handleChange}
-            required
-          />
-          <TextField
-            fullWidth
-            label="Mot de passe"
-            name="password"
-            type="password"
-            margin="normal"
-            onChange={handleChange}
-            required
-          />
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            sx={{ marginTop: "1rem" }}
-            type="submit"
-          >
-            S'inscrire
-          </Button>
-        </form>
-        <Typography variant="body2" align="center" sx={{ marginTop: "1rem" }}>
-          Déjà un compte ?{" "}
-          <Link to="/" style={{ color: "#3f51b5", textDecoration: "none" }}>
-            Connectez-vous ici
-          </Link>
-        </Typography>
-      </Paper>
-    </Container>
+    <div className="register-page">
+      <Container maxWidth="sm">
+        <Paper elevation={10} className="register-form-container">
+          <Typography variant="h4" align="center" gutterBottom>
+            Register
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Name"
+              name="name"
+              margin="normal"
+              onChange={handleChange}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              margin="normal"
+              onChange={handleChange}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              name="password"
+              type="password"
+              margin="normal"
+              onChange={handleChange}
+              required
+            />
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              className="submit-button"
+              type="submit"
+            >
+              Sign Up
+            </Button>
+          </form>
+          <Typography variant="body2" align="center" className="login-link">
+            Already have an account?{" "}
+            <Link to="/" className="login-link">
+              Login here
+            </Link>
+          </Typography>
+        </Paper>
+      </Container>
+    </div>
   );
 }
 

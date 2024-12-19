@@ -1,0 +1,25 @@
+.sidebar-title {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .sidebar-divider {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .sidebar-icon {
+    color: white;
+  }
+  
+  .logout-button {
+    background-color: #d32f2f;
+    color: white;
+    text-transform: none;
+    font-weight: bold;
+    width: 90%;
+  }
+  
+  .logout-button:hover {
+    background-color: #b71c1c;
+  }
+  

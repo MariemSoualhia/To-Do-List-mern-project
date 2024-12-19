@@ -29,3 +29,7 @@ export const updateTaskStatus = (id, status, token) =>
       headers: { Authorization: `Bearer ${token}` },
     }
   );
+export const getTaskStats = (token) =>
+  API.get("/tasks/stats", { headers: { Authorization: `Bearer ${token}` } });
+export const getUserProfile = (token) =>
+  API.get("/users/profile", { headers: { Authorization: `Bearer ${token}` } });

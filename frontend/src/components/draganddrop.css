@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+  
+  .task-container {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .task-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .task-paper {
+    width: 100%;
+    min-height: 500px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-paper.todo {
+    background: #fff8e1;
+    width: 100%;
+
+  }
+  
+  .task-paper.done {
+    background: #e8f5e9;
+    width: 100%;
+
+  }
+  
+  .task-header {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-item {
+    background: #ffffff;
+    width: 100%;
+   
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .task-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .done-item {
+    background: #c8e6c9;
+  }
+  
+  .task-title {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-desc {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .sortable-ghost {
+    opacity: 0.5;
+  }
+  

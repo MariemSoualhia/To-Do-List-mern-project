@@ -8,6 +8,7 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
+import "./draganddrop.css";
 
 function DragAndDropTasks() {
   const [tasksTodo, setTasksTodo] = useState([]);
@@ -43,7 +44,7 @@ function DragAndDropTasks() {
   };
 
   return (
-    <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
+    <Container maxWidth="md" className="task-container">
       {loading ? (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
@@ -51,20 +52,14 @@ function DragAndDropTasks() {
       ) : (
         <>
           <Typography variant="h4" align="center" gutterBottom>
-            Gestion des Tâches - Drag and Drop
+            Task Management - Drag and Drop
           </Typography>
 
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "2rem",
-            }}
-          >
+          <Box className="task-box">
             {/* To-Do List */}
-            <Paper sx={{ padding: "1rem", width: "45%", minHeight: "300px" }}>
-              <Typography variant="h5" align="center">
-                À Faire
+            <Paper className="task-paper todo">
+              <Typography variant="h5" align="center" className="task-header">
+                To Do
               </Typography>
               <ReactSortable
                 list={tasksTodo}
@@ -76,26 +71,20 @@ function DragAndDropTasks() {
                 ghostClass="sortable-ghost"
               >
                 {tasksTodo.map((task) => (
-                  <Box
-                    key={task._id}
-                    sx={{
-                      marginBottom: "1rem",
-                      padding: "0.5rem",
-                      backgroundColor: "#f0f0f0",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    <Typography>{task.title}</Typography>
-                    <Typography variant="body2">{task.description}</Typography>
+                  <Box key={task._id} className="task-item">
+                    <Typography className="task-title">{task.title}</Typography>
+                    <Typography className="task-desc">
+                      {task.description}
+                    </Typography>
                   </Box>
                 ))}
               </ReactSortable>
             </Paper>
 
             {/* Done List */}
-            <Paper sx={{ padding: "1rem", width: "45%", minHeight: "300px" }}>
-              <Typography variant="h5" align="center">
-                Terminées
+            <Paper className="task-paper done">
+              <Typography variant="h5" align="center" className="task-header">
+                Done
               </Typography>
               <ReactSortable
                 list={tasksDone}
@@ -107,17 +96,11 @@ function DragAndDropTasks() {
                 ghostClass="sortable-ghost"
               >
                 {tasksDone.map((task) => (
-                  <Box
-                    key={task._id}
-                    sx={{
-                      marginBottom: "1rem",
-                      padding: "0.5rem",
-                      backgroundColor: "#e0ffe0",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    <Typography>{task.title}</Typography>
-                    <Typography variant="body2">{task.description}</Typography>
+                  <Box key={task._id} className="task-item done-item">
+                    <Typography className="task-title">{task.title}</Typography>
+                    <Typography className="task-desc">
+                      {task.description}
+                    </Typography>
                   </Box>
                 ))}
               </ReactSortable>

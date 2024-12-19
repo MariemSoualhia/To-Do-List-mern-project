@@ -1,0 +1,26 @@
+
+  
+  .profile-container {
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .profile-card {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    width: 120%;
+  }
+  
+  .profile-card:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-avatar {
+    background-color: #3f51b5;
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+  

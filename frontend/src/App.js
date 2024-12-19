@@ -4,6 +4,7 @@ import TaskList from "./components/TaskList";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Sidebar from "./components/Sidebar";
 import DragAndDropTasks from "./components/DragAndDropTasks";
 
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/app/*"
           element={

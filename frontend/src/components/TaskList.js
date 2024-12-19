@@ -22,6 +22,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import "./tasklist.css";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -81,16 +82,16 @@ function TaskList() {
   };
 
   return (
-    <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
-      <Paper elevation={10} sx={{ padding: "2rem", borderRadius: "10px" }}>
+    <Container maxWidth="md" className="task-container">
+      <Paper elevation={10} className="task-paper">
         <Typography variant="h4" align="center" gutterBottom>
-          Liste des Tâches
+          Task Manager
         </Typography>
 
         {/* Task Form */}
-        <Box component="form" onSubmit={handleSubmit}>
+        <Box component="form" onSubmit={handleSubmit} className="task-form">
           <TextField
-            label="Titre"
+            label="Title"
             variant="outlined"
             value={newTask.title}
             onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
@@ -109,16 +110,21 @@ function TaskList() {
             fullWidth
             margin="normal"
           />
-          <Button type="submit" variant="contained" color="primary">
-            {editingTask ? "Modifier" : "Ajouter"}
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className="submit-button"
+          >
+            {editingTask ? "Update" : "Add"}
           </Button>
         </Box>
 
         {/* Task List */}
-        <List>
+        <List className="task-list">
           {tasks.map((task) => (
             <React.Fragment key={task._id}>
-              <ListItem>
+              <ListItem className="task-item">
                 <ListItemText
                   primary={
                     task.status === "done" ? `✅ ${task.title}` : task.title

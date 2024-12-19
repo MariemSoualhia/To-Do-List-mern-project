@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { loginUser } from "../services/api";
 import { Link, useNavigate } from "react-router-dom";
 import { TextField, Button, Container, Typography, Paper } from "@mui/material";
+import "../styles.css";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -17,56 +18,55 @@ function Login() {
       localStorage.setItem("token", data.token);
       navigate("/app/dashboard");
     } catch (err) {
-      console.error("Erreur de connexion", err);
+      console.error("Login error", err);
     }
   };
 
   return (
-    <Container maxWidth="sm">
-      <Paper elevation={10} sx={{ padding: "2rem", borderRadius: "10px" }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Connexion
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            margin="normal"
-            onChange={handleChange}
-            required
-          />
-          <TextField
-            fullWidth
-            label="Mot de passe"
-            name="password"
-            type="password"
-            margin="normal"
-            onChange={handleChange}
-            required
-          />
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            sx={{ marginTop: "1rem" }}
-            type="submit"
-          >
-            Se connecter
-          </Button>
-        </form>
-        <Typography variant="body2" align="center" sx={{ marginTop: "1rem" }}>
-          Pas encore de compte ?{" "}
-          <Link
-            to="/register"
-            style={{ color: "#3f51b5", textDecoration: "none" }}
-          >
-            Inscrivez-vous ici
-          </Link>
-        </Typography>
-      </Paper>
-    </Container>
+    <div className="login-page">
+      <Container maxWidth="sm">
+        <Paper elevation={10} className="login-form-container">
+          <Typography variant="h4" align="center" gutterBottom>
+            Login
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              margin="normal"
+              onChange={handleChange}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              name="password"
+              type="password"
+              margin="normal"
+              onChange={handleChange}
+              required
+            />
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              className="submit-button"
+              type="submit"
+            >
+              Login
+            </Button>
+          </form>
+          <Typography variant="body2" align="center" className="register-link">
+            Don't have an account?{" "}
+            <Link to="/register" className="register-link">
+              Sign up here
+            </Link>
+          </Typography>
+        </Paper>
+      </Container>
+    </div>
   );
 }
 
